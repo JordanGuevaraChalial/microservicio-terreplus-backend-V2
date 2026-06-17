@@ -3,14 +3,10 @@ const { Op } = require('sequelize');
 
 exports.obtenerDashboard = async (req, res) => {
   try {
-    const hoy = new Date();
-    const haceUnMes = new Date();
-    haceUnMes.setMonth(hoy.getMonth() - 1);
-
     // 1. Terrenos Registrados
     const totalTerrenos = await Terrain.count();
     
-    // 2. Usuarios Activos - Como User está en ms-auth, contamos usuarios únicos de consultas
+    // 2. Usuarios Activos - Contamos usuarios únicos de consultas
     const usuariosNuevos = await Consulta.count({
       distinct: true,
       col: 'usuario_id'
