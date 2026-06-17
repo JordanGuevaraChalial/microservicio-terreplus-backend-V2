@@ -1,0 +1,9 @@
+PORT=3002
+NODE_ENV=production
+DB_HOST=db-lands
+DB_PORT=5432
+DB_NAME=terreplus_lands
+DB_USER=postgres
+DB_PASSWORD=postgres
+JWT_SECRET=terreplus2026
+VALUATION_URL=http://ms-valuation:8000
